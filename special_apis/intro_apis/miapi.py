@@ -1,39 +1,26 @@
 from flask import Flask, request
-import tools.datos as dat
-from  tools.paraeldado import funciondado
-
-
 
 
 app = Flask(__name__)
 
-@app.route("/")
+
+@app.route('/')
 def index():
-    return "Hola mundo"
+    return 'Hola mundo'
 
 
-@app.route("/fer")
-def datos():
-    fer = dat.datosFer()
-    return fer
+
+@app.route('/ejemplo_01')
+def prueba():
+    return 'prueba_01'
 
 
-@app.route("/ana")
-def datos2():
-    ana = dat.datosAna()
-    return ana
-
-
-@app.route("/tiraeldado")
-def dado():
-    return funciondado()
+@app.route('/ejemplo_02')
+def prueba_02():
+    return 'Esto no me lo esperaba'
 
 
 
 
 
-
-
-
-app.run("0.0.0.0",5000, debug=True)
- 
+app.run("0.0.0.0", 5000, debug = True)
